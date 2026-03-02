@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bootstrap Demo (Combined)</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons (เพราะโค้ดมี bi bi-chat-fill, bi bi-bell) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<style>
+/* Override CSS Variables ของ Bootstrap */
+:root {
+    --bs-primary: #16a34a;           /* เปลี่ยนสีหลักเป็นเขียว */
+    --bs-primary-rgb: 22, 163, 74;   /* ต้องใส่ RGB ด้วยสำหรับ opacity */
+    --bs-link-color: #16a34a;        /* เปลี่ยนสี Link */
+    --bs-border-radius: 0.75rem;     /* เปลี่ยน Border Radius ทั้งหมด */
+    --bs-font-sans-serif: 'Sarabun', sans-serif; /* เปลี่ยน Font */
+    --bs-body-bg: #f8fafc;           /* เปลี่ยนสีพื้นหลัง */
+}
+
+/* Override เฉพาะ Component */
+.btn-primary {
+    --bs-btn-bg: #16a34a;
+    --bs-btn-border-color: #16a34a;
+    --bs-btn-hover-bg: #15803d;
+}
+
+.navbar {
+    --bs-navbar-brand-color: #16a34a;
+}
+</style>
+  
+</head>
+
+<body class="py-4">
+
+  <div class="container">
+    <h1 class="mb-4">Combined Bootstrap Components</h1>
+
+    <!-- Carousel พื้นฐาน -->
+    <div id="myCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+
+      <!-- Indicators (จุดบอกสไลด์) -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+
+      <!-- Slides -->
+      <div class="carousel-inner rounded">
+        <div class="carousel-item active">
+          <img src="https://picsum.photos/800/400?random=1" class="d-block w-100" alt="Slide 1">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>สไลด์ที่ 1</h5>
+            <p>คำอธิบายสไลด์แรก</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/800/400?random=2" class="d-block w-100" alt="Slide 2">
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/800/400?random=3" class="d-block w-100" alt="Slide 3">
+        </div>
+      </div>
+
+      <!-- ปุ่มเลื่อน -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!-- ตัวอย่าง Options ของ Carousel (แปลงจากโค้ดลอยๆ ให้เป็นเดโมจริง) -->
+    <div class="row g-3 mb-5">
+      <div class="col-12 col-lg-4">
+        <div class="p-3 bg-white rounded border">
+          <h2 class="h5">หยุด Auto slide</h2>
+          <div class="carousel slide" data-bs-ride="false" id="carouselNoAuto">
+            <div class="carousel-inner rounded">
+              <div class="carousel-item active">
+                <img src="https://picsum.photos/800/400?random=11" class="d-block w-100" alt="No auto 1">
+              </div>
+              <div class="carousel-item">
+                <img src="https://picsum.photos/800/400?random=12" class="d-block w-100" alt="No auto 2">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-4">
+        <div class="p-3 bg-white rounded border">
+          <h2 class="h5">กำหนด interval ต่อสไลด์</h2>
+          <div class="carousel slide" data-bs-ride="carousel" id="carouselInterval">
+            <div class="carousel-inner rounded">
+              <div class="carousel-item active" data-bs-interval="5000">
+                <img src="https://picsum.photos/800/400?random=21" class="d-block w-100" alt="Interval 1">
+              </div>
+              <div class="carousel-item" data-bs-interval="1000">
+                <img src="https://picsum.photos/800/400?random=22" class="d-block w-100" alt="Interval 2">
+              </div>
+            </div>
+          </div>
+          <div class="small text-muted mt-2">สไลด์แรก 5 วิ, สไลด์สอง 1 วิ</div>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-4">
+        <div class="p-3 bg-white rounded border">
+          <h2 class="h5">ปิด Touch Swipe</h2>
+          <div class="carousel slide" data-bs-ride="carousel" data-bs-touch="false" id="carouselNoTouch">
+            <div class="carousel-inner rounded">
+              <div class="carousel-item active">
+                <img src="https://picsum.photos/800/400?random=31" class="d-block w-100" alt="No touch 1">
+              </div>
+              <div class="carousel-item">
+                <img src="https://picsum.photos/800/400?random=32" class="d-block w-100" alt="No touch 2">
+              </div>
+            </div>
+          </div>
+          <div class="small text-muted mt-2">ลอง swipe บนมือถือจะไม่เลื่อน</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Accordion -->
+    <h2 class="mb-3">Accordion</h2>
+    <div class="accordion mb-4" id="myAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#item1">
+            หัวข้อที่ 1
+          </button>
+        </h2>
+        <div id="item1" class="accordion-collapse collapse show" data-bs-parent="#myAccordion">
+          <div class="accordion-body">เนื้อหาของหัวข้อที่ 1</div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#item2">
+            หัวข้อที่ 2
+          </button>
+        </h2>
+        <div id="item2" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+          <div class="accordion-body">เนื้อหาของหัวข้อที่ 2</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Accordion แบบไม่มีกรอบ (เติมตัวอย่างให้แทน "...") -->
+    <h2 class="mb-3">Flush Accordion</h2>
+    <div class="accordion accordion-flush mb-5" id="flushAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush1">
+            Flush item 1
+          </button>
+        </h2>
+        <div id="flush1" class="accordion-collapse collapse" data-bs-parent="#flushAccordion">
+          <div class="accordion-body">ตัวอย่างเนื้อหาแบบ flush</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <h2 class="mb-3">Table</h2>
+    <table class="table mb-4">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">ชื่อ</th>
+          <th scope="col">วิชา</th>
+          <th scope="col">คะแนน</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>สมชาย</td>
+          <td>เว็บเทคโนโลยี</td>
+          <td>95</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ตารางแบบ Responsive -->
+    <h2 class="mb-3">Responsive Table</h2>
+    <div class="table-responsive mb-5">
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>#</th><th>คอลัมน์ A</th><th>คอลัมน์ B</th><th>คอลัมน์ C</th><th>คอลัมน์ D</th><th>คอลัมน์ E</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td><td>ข้อมูลยาวมาก</td><td>ข้อมูลยาวมาก</td><td>ข้อมูลยาวมาก</td><td>ข้อมูลยาวมาก</td><td>ข้อมูลยาวมาก</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- List Group -->
+    <h2 class="mb-3">List Group</h2>
+    <ul class="list-group mb-3">
+      <li class="list-group-item">Item 1</li>
+      <li class="list-group-item active">Item 2 (Active)</li>
+      <li class="list-group-item disabled">Item 3 (Disabled)</li>
+    </ul>
+
+    <ol class="list-group list-group-numbered mb-3">
+      <li class="list-group-item">รายการที่ 1</li>
+      <li class="list-group-item">รายการที่ 2</li>
+    </ol>
+
+    <ul class="list-group mb-3">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        ข้อความที่ยังไม่ได้อ่าน
+        <span class="badge text-bg-primary rounded-pill">14</span>
+      </li>
+    </ul>
+
+    <div class="list-group mb-5">
+      <a href="#" class="list-group-item list-group-item-action active">หน้าแรก</a>
+      <a href="#" class="list-group-item list-group-item-action">เกี่ยวกับเรา</a>
+      <a href="#" class="list-group-item list-group-item-action list-group-item-success">ผลงาน (สีเขียว)</a>
+    </div>
+
+    <!-- Position utilities -->
+    <h2 class="mb-3">Position / Sticky / Badge overlay</h2>
+    <div class="position-sticky top-0 bg-white shadow-sm p-3 mb-3" style="z-index:100;">
+      Sticky Header
+      <span class="badge-custom ms-2">custom</span>
+    </div>
+
+    <div class="mb-5">
+      <div class="position-relative d-inline-block">
+        <i class="bi bi-bell fs-3"></i>
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          5
+        </span>
+      </div>
+    </div>
+
+    <!-- Overflow -->
+    <h2 class="mb-3">Overflow</h2>
+    <div class="overflow-auto border rounded p-2 mb-3" style="height:100px;">
+      Organic ---------- Yeyeyayay
+    </div>
+
+    <pre class="overflow-x-auto p-3 bg-dark text-white rounded mb-5"><code>โค้ดยาวมากที่ไม่ตัดบรรทัด... โค้ดยาวมากที่ไม่ตัดบรรทัด... โค้ดยาวมากที่ไม่ตัดบรรทัด...</code></pre>
+
+    <!-- Visibility -->
+    <h2 class="mb-3">Visibility: invisible vs d-none</h2>
+    <div class="d-flex gap-2 align-items-center mb-2">
+      <div class="p-3 bg-primary text-white">Box 1</div>
+      <div class="p-3 bg-success text-white invisible">Box 2 (invisible)</div>
+      <div class="p-3 bg-danger text-white">Box 3</div>
+    </div>
+
+    <div class="d-flex gap-2 align-items-center mb-5">
+      <div class="p-3 bg-primary text-white">Box 1</div>
+      <div class="p-3 bg-success text-white d-none">Box 2 (d-none)</div>
+      <div class="p-3 bg-danger text-white">Box 3</div>
+    </div>
+
+    <!-- Object fit (เปลี่ยน photo.jpg เป็น picsum ให้รันได้) -->
+    <h2 class="mb-3">Object-fit</h2>
+    <div class="row g-3 mb-5">
+      <div class="col-md-6">
+        <div class="card">
+          <img src="https://picsum.photos/600/400?random=101" class="card-img-top object-fit-cover" style="height:180px;" alt="cover">
+          <div class="card-body">object-fit-cover</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <img src="https://picsum.photos/600/400?random=102" class="card-img-top object-fit-contain bg-light" style="height:180px;" alt="contain">
+          <div class="card-body">object-fit-contain</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ratio -->
+    <h2 class="mb-3">Ratio</h2>
+    <div class="ratio ratio-16x9 mb-5 rounded overflow-hidden">
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen title="YouTube JungJung"></iframe>
+    </div>
+
+    <!-- Responsive patterns -->
+    <h2 class="mb-3">Responsive Patterns</h2>
+    <div class="d-flex flex-column flex-md-row gap-3 mb-3">
+      <div class="flex-fill p-3 bg-white border rounded">เนื้อหาหลัก</div>
+      <div class="p-3 bg-white border rounded" style="min-width:250px;">Sidebar</div>
+    </div>
+
+    <div class="d-none d-lg-block p-3 bg-white border rounded mb-3">
+      Sidebar (แสดงเฉพาะ Desktop)
+    </div>
+
+    <h1 class="fs-3 fs-md-2 fs-lg-1 mb-3">Responsive Heading</h1>
+
+    <button class="btn btn-primary w-100 w-md-auto mb-5">
+      Responsive Button
+    </button>
+
+    <div class="row mb-5">
+      <div class="col-12 col-md-8 order-2 order-md-1 p-3 bg-white border rounded">
+        เนื้อหา (แสดงหลังบน Mobile)
+      </div>
+      <div class="col-12 col-md-4 order-1 order-md-2 p-3 bg-white border rounded">
+        รูปภาพ (แสดงก่อนบน Mobile)
+      </div>
+    </div>
+
+    <div class="d-none d-print-block mb-2">แสดงเฉพาะตอนพิมพ์</div>
+    <div class="d-print-none mb-5">ซ่อนตอนพิมพ์ (เช่น เมนู, Ads)</div>
+
+    <!-- Notes: ส่วนที่เป็น SASS/NPM/Utility API (แสดงเป็นโค้ดเฉยๆ) -->
+    <h2 class="mb-3">Notes: SASS / Utility API (ไม่ใช่โค้ด HTML)</h2>
+    <pre class="p-3 bg-light border rounded"><code>// Override Bootstrap SASS Variables ก่อน @import
+$primary:    #16a34a;
+$secondary:  #0ea5e9;
+$success:    #22c55e;
+$danger:     #ef4444;
+
+$font-family-base: 'Sarabun', sans-serif;
+$border-radius:    0.75rem;
+$border-radius-lg: 1rem;
+
+$enable-shadows:   true;
+$enable-negative-margins: true;
+
+// Import Bootstrap หลังจาก Override Variables
+@import "bootstrap/scss/bootstrap";
+
+// ติดตั้ง
+npm install bootstrap@5.3 sass
+
+// Compile
+npx sass custom.scss output.css --style compressed --watch
+
+// Utility API example
+$utilities: map-merge(
+  $utilities,
+  (
+    "cursor": (
+      property: cursor,
+      class: cursor,
+      values: auto default pointer grab
+    )
+  )
+);
+
+@import "bootstrap/scss/utilities/api";</code></pre>
+
+  </div>
+
+  <!-- Fixed Button มุมล่างขวา (เช่น ปุ่ม Chat) -->
+  <button class="position-fixed bottom-0 end-0 m-4 btn btn-primary rounded-circle"
+          style="width:56px; height:56px;"
+          type="button" aria-label="Chat">
+    <i class="bi bi-chat-fill"></i>
+  </button>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- ควบคุม Carousel ด้วย JavaScript (ของเดิมคุณ) -->
+  <script>
+    const carousel = new bootstrap.Carousel('#myCarousel', {
+      interval: 3000,  // เปลี่ยนทุก 3 วินาที
+      wrap: true,      // วนรอบ
+      pause: 'hover'   // หยุดเมื่อ hover
+    });
+
+    // หมายเหตุ: ถ้าเรียก next/prev ทันที มันจะเลื่อนทันทีตอนโหลดหน้า
+    // carousel.next();
+    // carousel.prev();
+  </script>
+</body>
+</html>
