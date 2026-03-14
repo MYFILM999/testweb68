@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,29 +11,35 @@
 
   <!-- Bootstrap Icons (เพราะโค้ดมี bi bi-chat-fill, bi bi-bell) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-<style>
-/* Override CSS Variables ของ Bootstrap */
-:root {
-    --bs-primary: #16a34a;           /* เปลี่ยนสีหลักเป็นเขียว */
-    --bs-primary-rgb: 22, 163, 74;   /* ต้องใส่ RGB ด้วยสำหรับ opacity */
-    --bs-link-color: #16a34a;        /* เปลี่ยนสี Link */
-    --bs-border-radius: 0.75rem;     /* เปลี่ยน Border Radius ทั้งหมด */
-    --bs-font-sans-serif: 'Sarabun', sans-serif; /* เปลี่ยน Font */
-    --bs-body-bg: #f8fafc;           /* เปลี่ยนสีพื้นหลัง */
-}
+  <style>
+    /* Override CSS Variables ของ Bootstrap */
+    :root {
+      --bs-primary: #16a34a;
+      /* เปลี่ยนสีหลักเป็นเขียว */
+      --bs-primary-rgb: 22, 163, 74;
+      /* ต้องใส่ RGB ด้วยสำหรับ opacity */
+      --bs-link-color: #16a34a;
+      /* เปลี่ยนสี Link */
+      --bs-border-radius: 0.75rem;
+      /* เปลี่ยน Border Radius ทั้งหมด */
+      --bs-font-sans-serif: 'Sarabun', sans-serif;
+      /* เปลี่ยน Font */
+      --bs-body-bg: #f8fafc;
+      /* เปลี่ยนสีพื้นหลัง */
+    }
 
-/* Override เฉพาะ Component */
-.btn-primary {
-    --bs-btn-bg: #16a34a;
-    --bs-btn-border-color: #16a34a;
-    --bs-btn-hover-bg: #15803d;
-}
+    /* Override เฉพาะ Component */
+    .btn-primary {
+      --bs-btn-bg: #16a34a;
+      --bs-btn-border-color: #16a34a;
+      --bs-btn-hover-bg: #15803d;
+    }
 
-.navbar {
-    --bs-navbar-brand-color: #16a34a;
-}
-</style>
-  
+    .navbar {
+      --bs-navbar-brand-color: #16a34a;
+    }
+  </style>
+
 </head>
 
 <body class="py-4">
@@ -45,7 +52,8 @@
 
       <!-- Indicators (จุดบอกสไลด์) -->
       <div class="carousel-indicators">
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+          aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
@@ -199,12 +207,22 @@
       <table class="table table-striped table-hover">
         <thead>
           <tr>
-            <th>#</th><th>คอลัมน์ A</th><th>คอลัมน์ B</th><th>คอลัมน์ C</th><th>คอลัมน์ D</th><th>คอลัมน์ E</th>
+            <th>#</th>
+            <th>คอลัมน์ A</th>
+            <th>คอลัมน์ B</th>
+            <th>คอลัมน์ C</th>
+            <th>คอลัมน์ D</th>
+            <th>คอลัมน์ E</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>1</td><td>ข้อมูลยาวมาก</td><td>ข้อมูลยาวมาก</td><td>ข้อมูลยาวมาก</td><td>ข้อมูลยาวมาก</td><td>ข้อมูลยาวมาก</td>
+            <td>1</td>
+            <td>ข้อมูลยาวมาก</td>
+            <td>ข้อมูลยาวมาก</td>
+            <td>ข้อมูลยาวมาก</td>
+            <td>ข้อมูลยาวมาก</td>
+            <td>ข้อมูลยาวมาก</td>
           </tr>
         </tbody>
       </table>
@@ -258,7 +276,8 @@
       Organic ---------- Yeyeyayay
     </div>
 
-    <pre class="overflow-x-auto p-3 bg-dark text-white rounded mb-5"><code>โค้ดยาวมากที่ไม่ตัดบรรทัด... โค้ดยาวมากที่ไม่ตัดบรรทัด... โค้ดยาวมากที่ไม่ตัดบรรทัด...</code></pre>
+    <pre
+      class="overflow-x-auto p-3 bg-dark text-white rounded mb-5"><code>โค้ดยาวมากที่ไม่ตัดบรรทัด... โค้ดยาวมากที่ไม่ตัดบรรทัด... โค้ดยาวมากที่ไม่ตัดบรรทัด...</code></pre>
 
     <!-- Visibility -->
     <h2 class="mb-3">Visibility: invisible vs d-none</h2>
@@ -279,13 +298,15 @@
     <div class="row g-3 mb-5">
       <div class="col-md-6">
         <div class="card">
-          <img src="https://picsum.photos/600/400?random=101" class="card-img-top object-fit-cover" style="height:180px;" alt="cover">
+          <img src="https://picsum.photos/600/400?random=101" class="card-img-top object-fit-cover"
+            style="height:180px;" alt="cover">
           <div class="card-body">object-fit-cover</div>
         </div>
       </div>
       <div class="col-md-6">
         <div class="card">
-          <img src="https://picsum.photos/600/400?random=102" class="card-img-top object-fit-contain bg-light" style="height:180px;" alt="contain">
+          <img src="https://picsum.photos/600/400?random=102" class="card-img-top object-fit-contain bg-light"
+            style="height:180px;" alt="contain">
           <div class="card-body">object-fit-contain</div>
         </div>
       </div>
@@ -367,9 +388,8 @@ $utilities: map-merge(
   </div>
 
   <!-- Fixed Button มุมล่างขวา (เช่น ปุ่ม Chat) -->
-  <button class="position-fixed bottom-0 end-0 m-4 btn btn-primary rounded-circle"
-          style="width:56px; height:56px;"
-          type="button" aria-label="Chat">
+  <button class="position-fixed bottom-0 end-0 m-4 btn btn-primary rounded-circle" style="width:56px; height:56px;"
+    type="button" aria-label="Chat">
     <i class="bi bi-chat-fill"></i>
   </button>
 
@@ -389,4 +409,5 @@ $utilities: map-merge(
     // carousel.prev();
   </script>
 </body>
+
 </html>
